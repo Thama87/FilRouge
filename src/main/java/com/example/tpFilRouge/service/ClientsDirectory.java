@@ -18,7 +18,11 @@ public class ClientsDirectory {
 		return clientsRepository.findAll();
 	}
 	
-	public Optional<Clients> getClient(int id) {
-		return clientsRepository.findById(Long.valueOf(id));
+	public Optional<Clients> getClient(Long id) {
+		return clientsRepository.findById(id);
+	}
+	
+	public void postClient(Clients newClient) {
+		clientsRepository.save(newClient);
 	}
 }

@@ -18,7 +18,8 @@ public class Orders {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int id;
+	@Column(columnDefinition = "int")
+	private Long id;
 	@ManyToOne
 	private Clients client;
 	@Column(name="type_presta")
@@ -39,7 +40,7 @@ public class Orders {
 	public Orders() {}
 	
 	
-	public Orders(int id, Clients client, String type_presta, String designation, int nb_days, float unit_price) {
+	public Orders(Long id, Clients client, String type_presta, String designation, int nb_days, float unit_price) {
 		this.id = id;
 		this.client = client;
 		this.type_presta = type_presta;
@@ -53,10 +54,10 @@ public class Orders {
 	//---------------------------------------- Getters et Setters -------------------------------------//
 	//-------------------------------------------------------------------------------------------------//
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

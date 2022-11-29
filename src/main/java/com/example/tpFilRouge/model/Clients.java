@@ -19,7 +19,8 @@ public class Clients {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int id;
+	@Column(columnDefinition = "int")
+	private Long id;
 	@Column(name="company_name")
 	private String company_name="";
 	@Column(name="first_name")
@@ -40,7 +41,7 @@ public class Clients {
 	@Column(name="country")
 	private String country="";
 	@Column(name="state")
-	private Boolean state;
+	private Boolean state=true;
 
 	//-------------------------------------------------------------------------------------------------//
 	//---------------------------------------- Contructeurs -------------------------------------------//
@@ -49,7 +50,7 @@ public class Clients {
 	public Clients() {}
 	
 	
-	public Clients(int id, String company_name, String first_name, String last_name, String email, String phone,
+	public Clients(Long id, String company_name, String first_name, String last_name, String email, String phone,
 			String address, String zip_code, String city, String country) {
 		this.id = id;
 		this.company_name = company_name;
@@ -68,10 +69,10 @@ public class Clients {
 	//---------------------------------------- Getters et Setters -------------------------------------//
 	//-------------------------------------------------------------------------------------------------//
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
