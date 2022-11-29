@@ -1,7 +1,5 @@
 package com.example.tpFilRouge.model;
 
-import java.math.BigInteger;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
