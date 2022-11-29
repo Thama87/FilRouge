@@ -29,4 +29,8 @@ public class ClientsDirectory {
 	public void deleteClient(Long id){
 		clientsRepository.deleteById(id);
 	}
+
+	public void updateClient(Clients clientToUpdate, Long id){
+		clientsRepository.save(clientToUpdate);
+	}
 }
