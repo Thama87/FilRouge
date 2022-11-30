@@ -30,8 +30,8 @@ public class Orders {
 	private int nb_days;
 	@Column(name="unit_price")
 	private float unit_price;
-	@Column(name="state")
-	private Boolean state;
+	@Column(name="state", columnDefinition="BIT")
+	private OrdersState state;
 
 	//-------------------------------------------------------------------------------------------------//
 	//---------------------------------------- Contructeurs -------------------------------------------//
@@ -40,14 +40,14 @@ public class Orders {
 	public Orders() {}
 	
 	
-	public Orders(Long id, Clients client, String type_presta, String designation, int nb_days, float unit_price) {
+	public Orders(Long id, Clients client, String type_presta, String designation, int nb_days, float unit_price, OrdersState state) {
 		this.id = id;
 		this.client = client;
 		this.type_presta = type_presta;
 		this.designation = designation;
 		this.nb_days = nb_days;
 		this.unit_price = unit_price;
-		this.state = true;
+		this.state = state;
 	}
 
 	//-------------------------------------------------------------------------------------------------//
@@ -102,10 +102,10 @@ public class Orders {
 	}
 	
 	
-	public Boolean getState() {
+	public OrdersState getState() {
 		return state;
 	}
-	public void setState(Boolean state) {
+	public void setState(OrdersState state) {
 		this.state = state;
 	}
 	

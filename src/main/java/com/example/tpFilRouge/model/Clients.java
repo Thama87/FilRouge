@@ -40,8 +40,8 @@ public class Clients {
 	private String city="";
 	@Column(name="country")
 	private String country="";
-	@Column(name="state")
-	private Boolean state=true;
+	@Column(name="state", columnDefinition="BIT")
+	private ClientsState state;
 
 	//-------------------------------------------------------------------------------------------------//
 	//---------------------------------------- Contructeurs -------------------------------------------//
@@ -51,7 +51,7 @@ public class Clients {
 	
 	
 	public Clients(Long id, String company_name, String first_name, String last_name, String email, String phone,
-			String address, String zip_code, String city, String country) {
+			String address, String zip_code, String city, String country, ClientsState state) {
 		this.id = id;
 		this.company_name = company_name;
 		this.first_name = first_name;
@@ -62,7 +62,7 @@ public class Clients {
 		this.zip_code = zip_code;
 		this.city = city;
 		this.country = country;
-		this.state = true;
+		this.state = state;
 	}
 
 	//-------------------------------------------------------------------------------------------------//
@@ -149,10 +149,10 @@ public class Clients {
 	}
 	
 	
-	public Boolean getState() {
+	public ClientsState getState() {
 		return state;
 	}
-	public void setState(Boolean state) {
+	public void setState(ClientsState state) {
 		this.state = state;
 	}
 	
